@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de reportes comunitarios</title>
+    <link rel="shortcut icon" href="imagenes/reporte.png" type="image/x-icon">
+    <script src="./js/jquery-3.7.1.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <style>
+        .imagen {
+            height: 350px;
+        }
+        .texto {
+            height: fit-content;
+        }
+        .noche{
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 5px;
+            transition: 0.5s ease;
+        }
+        .dia{
+            background-color: white;
+            color: black;
+            border-radius: 10px;
+            padding: 5px;
+            transition: 0.5s ease;
+        }
+        img:hover{
+            transform: scale(1.01);
+        }
+        a:hover{
+            transform: scale(1.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container-fluid">
+        <div class="card d-flex noche">
+            <div class="card-header noche mt-3" style="display:flex;justify-content:space-between;border-radius:10px;">
+                <p id="parrafo">Plataforma de Reportes Comunitarios</p>
+                <p id="horario"></p>
+                <div class="form-check form-switch noche" id="cuerpo">
+                    <input class="form-check-input" type="checkbox" value="" id="checkNativeSwitch" role="switch" checked>
+                    <label class="form-check-label" for="checkNativeSwitch" id="etiqueta">
+                        Efecto noche
+                    </label>
+                </div>
+            </div>
+            <div class="card-body noche">
+                <h5 class="card-title">Un lugar donde todos podemos ser parte.</h5>
+                <p class="card-text">Los vecinos y empresas pueden reportar problemas y colaborar en la solución.</p>
+                <a href="./login.php" class="btn btn-primary">Sumate</a>
+            </div>
+        </div>
+        <div class="row row-cols-1 row-cols-md-2 g-4 mt-2">
+            <div class="col">
+                <div class="card noche">
+                <img src="./imagenes/bache.jpg" class="card-img-top imagen" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Baches</h5>
+                    <p class="card-text texto">Cuidar nuestras calles es responsabilidad de todos. Cada bache que se forma en la vía pública no sólo afecta la circulación vehicular, sino que puede provocar accidentes, dañar vehículos y poner en riesgo a quienes se trasladan a pie, en bicicleta o en moto.
+                                               Por eso, los invitamos a participar activamente reportando el avistamiento de baches en cualquier barrio o localidad del distrito. Su colaboración es fundamental: cada reporte nos ayuda a intervenir más rápido, priorizar arreglos y mejorar la seguridad vial en toda nuestra comunidad.
+                                               Las empresas locales también cumplen un rol central, aportando soluciones, recursos o simplemente difundiendo esta iniciativa. Entre todos podemos lograr calles más seguras, transitables y una ciudad mejor cuidada para las familias de Rivadavia.</p>
+                    <a href="./login.php" class="btn btn-success mt-3">Sumate 🚧</a>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card noche">
+                <img src="./imagenes/basura.jpg" class="card-img-top imagen" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Tiraderos ilegales de basura</h5>
+                    <p class="card-text texto">Los tiraderos ilegales de basura afectan directamente la salud pública, contaminan el ambiente, deterioran espacios compartidos y generan focos de riesgo para toda la comunidad. Mantener nuestros barrios limpios es una tarea que nos involucra a todos.
+                                               Por eso, los invitamos a colaborar reportando cualquier lugar donde se detecte basura arrojada fuera de los espacios autorizados. Esta información permite actuar con mayor rapidez, mejorar la higiene urbana y preservar la calidad de vida en nuestras localidades.
+                                               Las empresas del medio también pueden sumarse brindando apoyo, participando en acciones de limpieza o simplemente difundiendo buenas prácticas ambientales. Entre todos podemos lograr un entorno más limpio y saludable para las familias de Rivadavia.</p>
+                    <a href="./login.php" class="btn btn-success mt-3">Sumate 🗑</a>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card noche">
+                <img src="./imagenes/animales.jpg" class="card-img-top imagen" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Animales encontrados/perdidos</h5>
+                    <p class="card-text texto">Los casos de animales perdidos o encontrados en la vía pública requieren la colaboración de toda la comunidad. Cada mascota extraviada representa una familia angustiada y un animal expuesto a riesgos. Identificar rápidamente su ubicación y avisar a quienes corresponda permite aumentar las chances de reencuentro.
+                                               Por eso, los invitamos a reportar de manera inmediata la presencia de animales sin dueño visible o encontrados en cualquier barrio o localidad del distrito. Esta información ayuda a coordinar acciones, difundir avisos y facilitar el contacto con sus responsables.
+                                               Las empresas locales también pueden aportar compartiendo publicaciones, ofreciendo espacios o recursos para resguardo temporal. Entre todos podemos promover el cuidado responsable, la protección animal y la importancia de actuar a tiempo.</p>
+                    <a href="./login.php" class="btn btn-success mt-3">Sumate 🐶</a>
+                </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="card noche">
+                <img src="./imagenes/luminarias.jpg" class="card-img-top imagen" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Luminarias apagadas</h5>
+                    <p class="card-text texto">La detección y el reporte de luminarias apagadas es fundamental para garantizar una ciudad más segura y transitable durante la noche. La falta de iluminación puede favorecer accidentes, dificultar la circulación y afectar la sensación de seguridad en nuestros barrios. 
+                                               Por eso, los invitamos a informar cualquier luminaria que se encuentre apagada o con fallas en cualquier punto del distrito. Cada reporte contribuye a organizar mejor las intervenciones, priorizar reparaciones y mejorar la iluminación general del espacio urbano.
+                                               Las empresas locales también pueden colaborar difundiendo esta iniciativa, aportando soluciones o acompañando acciones de mantenimiento. Entre todos podemos construir espacios más cuidados, iluminados y seguros para las familias de Rivadavia.</p>
+                    <a href="./login.php" class="btn btn-success mt-3">Sumate 💡</a>
+                </div>
+                </div>
+            </div>
+        </div>
+        <div class="card text-center noche mt-3">
+            <div class="card-header">
+                Suma puntos...
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Te contamos como sumar puntos!</h5>
+                <h5 class="card-title">👥 Para Vecinos</h5>
+                <p class="card-text">Cada vez que un vecino realiza un reporte sobre un problema en la vía pública, como un bache, una luminaria apagada, basura en lugares no permitidos o un animal perdido, suma puntos dentro de la plataforma. Estos puntos reconocen el compromiso ciudadano y pueden dar lugar a menciones, premios o acciones especiales por parte de la Municipalidad.
+                                     Los reportes permiten que el municipio identifique más rápido cada situación y pueda asignar un estado: pendiente, en proceso o resuelto, informando así el avance de cada caso. Además, se podrá acceder a un panel con estadísticas que muestran cuáles son los barrios más activos y los problemas más frecuentes. Esto nos ayuda a intervenir con mayor precisión y mejorar la calidad de vida en cada localidad del Partido de Rivadavia.
+                                     Sumarte es muy fácil, solo tenés que registrarte, observar tu entorno y reportar cuando detectes algún inconveniente. Entre todos hacemos una ciudad más segura, limpia y cuidada.</p>
+                <h5 class="card-title">🏢 Para Empresas</h5>
+                <p class="card-text">Las empresas del Partido de Rivadavia también pueden participar activamente ofreciendo materiales, servicios o colaboración para resolver los problemas reportados. Cada aporte suma puntos, reflejando el compromiso social y fortaleciendo el vínculo con la comunidad.
+                                     La plataforma permite visualizar los reportes, conocer las necesidades del entorno y decidir de qué manera colaborar. El municipio asigna estados a cada caso, lo que permite priorizar acciones y coordinar mejor las intervenciones cuando una empresa pueda ayudar.
+                                     Las empresas también podrán ver estadísticas y conocer cuáles son los barrios más activos, los tipos de problemas más frecuentes y dónde existe mayor necesidad de acción. Participar significa ser parte de una comunidad más segura y responsable, generando impacto real y visible. Entre todos, construimos un Rivadavia mejor.</p>
+                <a href="./login.php" class="btn btn-primary">Sumate 😀</a>
+                <h5 class="card-title mt-3">✔ Uso responsable de la plataforma</h5>
+                <p class="card-text fs-4">Esta plataforma fue creada para fortalecer la participación ciudadana y la 
+                                     colaboración entre vecinos, empresas y el municipio, con el objetivo de mejorar la calidad 
+                                     de vida en la comunidad. Para que este espacio funcione de manera justa y efectiva, es fundamental 
+                                     que todos los participantes hagan un uso responsable y honesto del sistema.
+                                     Cuando un usuario genere dos reportes falsos, intencionalmente incorrectos o 
+                                     que no representen una situación real, el sistema aplicará una suspensión 
+                                     temporal de su cuenta. De igual modo, si una empresa declara dos 
+                                     colaboraciones que no se concretan en la práctica, su actividad dentro 
+                                     de la plataforma será suspendida de forma preventiva.
+                                     Durante el período de suspensión, el municipio realizará una evaluación de 
+                                     la situación, analizando los reportes o colaboraciones cuestionadas y 
+                                     determinando las acciones correspondientes. Esta medida no tiene un fin 
+                                     punitivo, sino preventivo, buscando resguardar la transparencia y la confianza 
+                                     de toda la comunidad.
+                                     En estos casos, los usuarios o empresas perderán únicamente los puntos 
+                                     obtenidos por los reportes o colaboraciones falsas, mientras que los aportes 
+                                     correctos y verificados serán preservados. De esta manera, se reconoce el 
+                                     compromiso genuino y se desalienta el uso indebido de la plataforma.
+                                     El respeto por estas normas permite que el sistema siga siendo una herramienta 
+                                     confiable, equitativa y útil para todos, promoviendo una comunidad más 
+                                     participativa, solidaria y responsable.</p>
+            </div>
+            <div class="card-footer text-body-secondary">
+                <h5 class="card-title" id="frase">Tu aporte suma. Tu reporte importa.</h5>
+            </div>
+        </div>
+
+        <div class="card-group mt-2">
+            <div class="card noche">
+                <img src="./imagenes/plata.png" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Insignia de plata</h5>
+                    <p class="card-text">“Cada reporte es un acto de compromiso.
+                                          Con 10 aportes a la comunidad, tu participación se reconoce con la 
+                                          Insignia de Plata: un símbolo de tu compromiso con un Rivadavia más 
+                                          cuidado, solidario y participativo.”</p>
+                    
+                </div>
+            </div>
+                <div class="card noche">
+                    <img src="./imagenes/dorada.png" class="card-img-top" alt="...">
+                    <div class="card-body">
+                    <h5 class="card-title">Insignia dorada</h5>
+                    <p class="card-text">“Cuando el compromiso crece, el impacto se multiplica.
+                                          Con 50 reportes realizados, tu participación es reconocida con la 
+                                          Insignia Dorada: un símbolo de constancia, responsabilidad y 
+                                          aporte activo a una comunidad que mejora gracias al esfuerzo de todos.”</p>
+                </div>
+            </div>
+            <div class="card noche">
+                <img src="./imagenes/diamante.jpg" class="card-img-top" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Insignia de diamante</h5>
+                    <p class="card-text">“La excelencia se construye con constancia.
+                                          Al alcanzar 100 reportes, tu compromiso con la comunidad se 
+                                          transforma en la Insignia de Diamante: un reconocimiento a quienes 
+                                          colaboran de manera sostenida, generan un impacto real y ayudan a 
+                                          construir una comunidad más segura, solidaria y participativa.
+                                          Este logro será destacado con una mención especial y reconocimiento en 
+                                          el Palacio Municipal, como ejemplo de participación y responsabilidad 
+                                          ciudadana.”</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="card noche mt-3">
+            <div class="card-header">
+                Todos los derechos reservados.
+            </div>
+            <div class="card-body">
+                <h5 class="card-title">Seguinos en nuestras redes sociales</h5>
+                <div><a href="#"><img src="./imagenes/whatsapp.png" alt=""></a> <a href="#"><img src="./imagenes/twitter.png" alt=""></a> <a href="#"><img src="./imagenes/instagram.png" alt=""></a> <a href="#"><img src="./imagenes/facebook.png" alt=""></a></div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    <script>
+
+        $(document).ready(function(){
+
+            $('div').hide();
+            $('div').fadeIn(500);
+
+            const btnCheck = document.getElementById('checkNativeSwitch');
+            const cuerpo = document.getElementById('cuerpo');
+            const cambio = document.querySelectorAll('.noche');
+            const etiqueta = document.getElementById('etiqueta');
+            const frase = document.getElementById('frase').style.color = 'blue';
+
+            btnCheck.addEventListener('change', function(){
+                cambio.forEach(c => {
+                    if(this.checked == true){
+                        $('div').hide();
+                        $('div').fadeIn(100);
+                        c.classList.add('noche');
+                        c.classList.remove('dia');
+                        etiqueta.textContent = 'Efecto noche';
+                        frase.style.color = 'blue';
+                    }else{
+                        $('div').hide();
+                        $('div').fadeIn(100);
+                        c.classList.add('dia');
+                        c.classList.remove('noche');
+                        etiqueta.textContent = 'Efecto día';
+                        frase.style.color = 'black';
+                    }
+                });
+            });
+
+        });
+        function horario(){
+            let fecha = new Date();
+            let diaMes = fecha.getDate();
+            let mes = fecha.getMonth();
+
+            if(mes == 0){mes = 'Enero'}
+            if(mes == 1){mes = 'Febrero'}
+            if(mes == 2){mes = 'Marzo'}
+            if(mes == 3){mes = 'Abril'}
+            if(mes == 4){mes = 'Mayo'}
+            if(mes == 5){mes = 'Junio'}
+            if(mes == 6){mes = 'Julio'}
+            if(mes == 7){mes = 'Agosto'}
+            if(mes == 8){mes = 'Septiembre'}
+            if(mes == 9){mes = 'Octubre'}
+            if(mes == 10){mes = 'Noviembre'}
+            if(mes == 11){mes = 'Diciembre'}
+
+            year = fecha.getFullYear();
+
+            fecha = diaMes;
+            document.getElementById('horario').textContent = fecha+" de "+mes+" del "+year;
+        }
+        horario();
+        
+    </script>
+</body>
+</html>
